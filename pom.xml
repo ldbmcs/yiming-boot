@@ -56,7 +56,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.1.1</version>
+            <version>3.3.1</version>
         </dependency>
         <!-- commons -->
         <dependency>
@@ -78,7 +78,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
-            <version>3.1.1</version>
+            <version>3.3.1</version>
         </dependency>
         <dependency>
             <groupId>org.freemarker</groupId>

@@ -1,1 +1,14 @@
-# 测试环境配置
+## datasource
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://xxx:3306/xxx?useUnicode=true&characterEncoding=utf8
+      username: xxx
+      password: xxx
+      driverClassName: com.mysql.jdbc.Driver
+      db-type: com.alibaba.druid.pool.DruidDataSource
+## log
+logging:
+  level:
+    com.baomidou.mybatisplus: DEBUG
+    com.ldbmcs: DEBUG
