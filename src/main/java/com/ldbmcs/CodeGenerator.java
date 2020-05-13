@@ -11,9 +11,7 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import com.ldbmcs.common.base.BaseEntity;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * 代码生成器
@@ -22,6 +20,9 @@ import java.util.Scanner;
  * @date 2020/5/13
  */
 public class CodeGenerator {
+
+    private static final String PROJECT_PATH = System.getProperty("user.dir");
+    private static final String TEMPLATE_FILE_PATH = PROJECT_PATH + "/src/main/resources/generator/template";
 
     /**
      * 读取控制台内容
@@ -44,8 +45,7 @@ public class CodeGenerator {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath + "/src/main/java");
+        gc.setOutputDir(PROJECT_PATH + "/src/main/java");
         gc.setAuthor("ldbmcs");
         gc.setOpen(false);
         gc.setSwagger2(true);
@@ -53,10 +53,10 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://xxx:3306/xxx?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://rm-bp1963h6klk3ed8kvvo.mysql.rds.aliyuncs.com:3306/preAuth?useUnicode=true&useSSL=false&characterEncoding=utf8");
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("xxx");
-        dsc.setPassword("xxx");
+        dsc.setUsername("yunguo");
+        dsc.setPassword("bwMNdBi88UpL");
         mpg.setDataSource(dsc);
 
         // 包配置
@@ -69,7 +69,9 @@ public class CodeGenerator {
         InjectionConfig cfg = new InjectionConfig() {
             @Override
             public void initMap() {
-                // to do nothing
+                Map<String, Object> map = new HashMap<>();
+                map.put("abc", this.getConfig().getGlobalConfig().getAuthor() + "-mp");
+                this.setMap(map);
             }
         };
 
@@ -83,7 +85,7 @@ public class CodeGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
+                return PROJECT_PATH + "/src/main/resources/mapper/" + pc.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });

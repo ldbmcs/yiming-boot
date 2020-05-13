@@ -10,13 +10,13 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
-* <p>
-* 用户 前端控制器
-* </p>
-*
-* @author ldbmcs
-* @since 2020-05-13
-*/
+ * <p>
+ * 用户 前端控制器
+ * </p>
+ *
+ * @author ldbmcs
+ * @since 2020-05-13
+ */
 @RestController
 @RequestMapping("/system/sys-user")
 public class SysUserController extends BaseController {

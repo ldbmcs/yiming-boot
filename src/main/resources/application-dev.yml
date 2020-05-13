@@ -2,9 +2,9 @@
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://xxx:3306/xxx?useUnicode=true&characterEncoding=utf8
-      username: xxx
-      password: xxx
+      url: jdbc:mysql://rm-bp1963h6klk3ed8kvvo.mysql.rds.aliyuncs.com:3306/preauth?useUnicode=true&characterEncoding=utf8
+      username: preauth
+      password: o6VzfVK*_iKF
       driverClassName: com.mysql.jdbc.Driver
       db-type: com.alibaba.druid.pool.DruidDataSource
 ## log

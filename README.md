@@ -1,5 +1,5 @@
 ## 简介
-yiming-boot 是一个基于Spring Boot & MyBatis & Mybatis Plus的脚手架项目，用于快速构建中小型API、RESTful API项目。
+yiming-boot 是一个基于Spring Boot & MyBatis & Mybatis Plus的脚手架项目，用于快速构建中小型API项目。
 
 ## 功能点
 - 最佳实践的项目结构、配置文件、精简的POM
@@ -27,3 +27,6 @@ yiming-boot 是一个基于Spring Boot & MyBatis & Mybatis Plus的脚手架项�
 - Spring Boot（[查看Spring Boot学习&使用指南](http://www.jianshu.com/p/1a9fd8936bd8)）
 - MyBatis（[查看官方中文文档](http://www.mybatis.org/mybatis-3/zh/index.html)）
 - MyBatis plus（[查看官方中文文档](https://mybatis.plus/)）
+
+## License
+无，纯粹开源分享，感谢大家 [Star](https://github.com/lihengming/spring-boot-api-project-seed/stargazers) & [Fork](https://github.com/lihengming/spring-boot-api-project-seed/network/members) 的支持。
