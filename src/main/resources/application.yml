@@ -1,0 +1,16 @@
+# 端口
+server:
+    port: 8081
+
+# 多环境配置
+spring:
+    profiles:
+        active: dev
+
+## Mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  typeAliasesPackage: com.ldbmcs.*
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
