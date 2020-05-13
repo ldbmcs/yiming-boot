@@ -1,5 +1,5 @@
 ## 简介
-yiming-boot 是一个基于Spring Boot & MyBatis的种子项目，用于快速构建中小型API、RESTful API项目，该种子项目已经有过多个真实项目的实践，稳定、简单、快速，使我们摆脱那些重复劳动，专注于业务代码的编写，减少加班。
+yiming-boot 是一个基于Spring Boot & MyBatis的种子项目，用于快速构建中小型API、RESTful API项目。
 
 ## 特征&提供
 - 最佳实践的项目结构、配置文件、精简的POM
@@ -21,18 +21,15 @@ yiming-boot 是一个基于Spring Boot & MyBatis的种子项目，用于快速�
 5. 对开发环境配置文件```application-dev.properties```进行配置，启动项目，Have Fun！
  
 ## 开发建议
-- 表名，建议使用小写，多个单词使用下划线拼接
-- Model内成员变量建议与表字段数量对应，如需扩展成员变量（比如连表查询）建议创建DTO，否则需在扩展的成员变量上加```@Transient```注解，详情见[通用Mapper插件文档说明](https://mapperhelper.github.io/docs/2.use/)
-- 建议业务失败直接使用```ServiceException("message")```抛出，由统一异常处理器来封装业务失败的响应结果，比如```throw new ServiceException("该手机号已被注册")```，会直接被封装为```{"code":400,"message":"该手机号已被注册"}```返回，无需自己处理，尽情抛出
-- 需要工具类的话建议先从```apache-commons-*```和```guava```中找，实在没有再造轮子或引入类库，尽量精简项目
+- 表名，建议使用小写，多个单词使用下划线拼接。
+- Model内成员变量建议与表字段数量对应，如需扩展成员变量（比如连表查询）建议创建DTO，否则需在扩展的成员变量上加```@TableField(exist = false)```注解。
+- 建议业务失败直接使用```BusinessException("message")```抛出，由统一异常处理器来封装业务失败的响应结果，比如```throw new BusinessException("该手机号已被注册")```，会直接被封装为```{"code":400,"message":"该手机号已被注册"}```返回，无需自己处理，尽情抛出
+- 需要工具类的话建议先从```hutool```中找，实在没有再造轮子或引入类库，尽量精简项目
 - 开发规范建议遵循阿里巴巴Java开发手册（[最新版下载](https://github.com/alibaba/p3c))
-- 建议在公司内部使用[ShowDoc](https://github.com/star7th/showdoc)、[SpringFox-Swagger2](https://github.com/springfox/springfox) 、[RAP](https://github.com/thx/RAP)等开源项目来编写、管理API文档
  
 ## 技术选型&文档
 - Spring Boot（[查看Spring Boot学习&使用指南](http://www.jianshu.com/p/1a9fd8936bd8)）
 - MyBatis（[查看官方中文文档](http://www.mybatis.org/mybatis-3/zh/index.html)）
-- MyBatisb通用Mapper插件（[查看官方中文文档](https://mapperhelper.github.io/docs/)）
-- MyBatis PageHelper分页插件（[查看官方中文文档](https://pagehelper.github.io/)）
+- MyBatis plus（[查看官方中文文档](https://mybatis.plus/)）
 - Druid Spring Boot Starter（[查看官方中文文档](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter/)）
 - Fastjson（[查看官方中文文档](https://github.com/Alibaba/fastjson/wiki/%E9%A6%96%E9%A1%B5)）
-- 其他略
