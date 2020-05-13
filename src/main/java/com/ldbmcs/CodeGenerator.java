@@ -53,10 +53,10 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://rm-bp1963h6klk3ed8kvvo.mysql.rds.aliyuncs.com:3306/preAuth?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://xxx:3306/xxx?useUnicode=true&useSSL=false&characterEncoding=utf8");
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("yunguo");
-        dsc.setPassword("bwMNdBi88UpL");
+        dsc.setUsername("xxx");
+        dsc.setPassword("xxx");
         mpg.setDataSource(dsc);
 
         // 包配置
