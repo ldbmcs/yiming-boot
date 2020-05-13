@@ -29,4 +29,4 @@ yiming-boot 是一个基于Spring Boot & MyBatis & Mybatis Plus的脚手架项�
 - MyBatis plus（[查看官方中文文档](https://mybatis.plus/)）
 
 ## License
-无，纯粹开源分享，感谢大家 [Star](https://github.com/lihengming/spring-boot-api-project-seed/stargazers) & [Fork](https://github.com/lihengming/spring-boot-api-project-seed/network/members) 的支持。
+无，纯粹开源分享
