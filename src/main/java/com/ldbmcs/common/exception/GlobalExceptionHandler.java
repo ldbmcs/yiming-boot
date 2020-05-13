@@ -34,14 +34,14 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ApiResult handleException(Exception e) {
         log.error(e.getMessage());
-        return new ApiResult(HttpStatus.INTERNAL_SERVER_ERROR.value(), "系统异常，请稍后重试。");
+        return new ApiResult(HttpStatus.INTERNAL_SERVER_ERROR.value(), "系统异常，请联系管理员。");
     }
 
     @ExceptionHandler(BusinessException.class)
     @ResponseBody
     public ApiResult handleParamsInvalidException(BusinessException e) {
         log.error(e.getMessage());
-        return new ApiResult(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage());
+        return new ApiResult(HttpStatus.INTERNAL_SERVER_ERROR.value(), "系统异常，请联系管理员。");
     }
 
     /**
@@ -59,7 +59,8 @@ public class GlobalExceptionHandler {
             message.append(error.getField()).append(error.getDefaultMessage()).append(StringPool.COMMA);
         }
         message = new StringBuilder(message.substring(0, message.length() - 1));
-        return new ApiResult(HttpStatus.BAD_REQUEST.value(), message.toString());
+        log.error(message.toString());
+        return new ApiResult(HttpStatus.BAD_REQUEST.value(), "系统异常，请联系管理员。");
 
     }
 
@@ -80,6 +81,7 @@ public class GlobalExceptionHandler {
             message.append(pathArr[1]).append(violation.getMessage()).append(StringPool.COMMA);
         }
         message = new StringBuilder(message.substring(0, message.length() - 1));
-        return new ApiResult(HttpStatus.BAD_REQUEST.value(), message.toString());
+        log.error(message.toString());
+        return new ApiResult(HttpStatus.BAD_REQUEST.value(), "系统异常，请联系管理员。");
     }
 }

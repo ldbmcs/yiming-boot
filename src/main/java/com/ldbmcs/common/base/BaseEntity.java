@@ -2,6 +2,7 @@ package com.ldbmcs.common.base;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -27,6 +28,7 @@ public class BaseEntity {
     private Long updateTime = 0L;
 
     @ApiModelProperty(value = "是否删除(1 正常  2删除)")
+    @TableLogic
     private Integer deleteStatus = 1;
 
     @ApiModelProperty(value = "删除时间")
